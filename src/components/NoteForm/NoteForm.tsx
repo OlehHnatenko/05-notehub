@@ -62,7 +62,7 @@ export default function NoteForm({ onCloseModal }: NoteFormProps) {
                     <label htmlFor={`${formId}-content`}>Content</label>
                     <Field
                         as="textarea"
-                        id={`${formId}content`}
+                        id={`${formId}-content`}
                         name="content"
                         rows={8}
                         className={css.textarea}
