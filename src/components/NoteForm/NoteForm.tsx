@@ -1,6 +1,6 @@
 import css from './NoteForm.module.css';
 import type { NewNote } from '../../types/note';
-import { Formik, Form, Field, ErrorMessage, type FormikHelpers } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useId } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
@@ -39,10 +39,7 @@ export default function NoteForm({ onCloseModal }: NoteFormProps) {
         },
     });
 
-    const handleSubmit = (values: NewNote,
-        formikHelpers: FormikHelpers<NewNote>
-    ) => {
-        formikHelpers.resetForm(); 
+    const handleSubmit = (values: NewNote) => {        
         mutate(values);
     }
     
